@@ -1,0 +1,24 @@
+.control-container {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* This ensures the slider doesn't get blocked by the 3D click controls */
+    pointer-events: auto; 
+}
+
+.control-container label {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #bbb; /* Subtle gray text */
+    font-weight: bold;
+}
+
+/* Styling the actual slider bar */
+#sliceSlider {
+    width: 300px;
+    cursor: pointer;
+    accent-color: #ffffff; /* Makes the slider knob white */
+}
