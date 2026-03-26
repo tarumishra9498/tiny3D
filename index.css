@@ -1,0 +1,43 @@
+/* 1. This changes the bright white around your 800px box to gray */
+body {
+    background-color: #6c6b6b; /* Medium gray - adjust this to be lighter or darker */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Ensures everything stays centered on the screen */
+    min-height: 100vh;
+}
+
+#heading {
+    width: 800px;            
+    margin: 40px auto 20px auto; /* Added more space at the very top */
+    text-align: center;      
+    
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    /* Changed color to a brighter shade since your previous dark red 
+       might be hard to see on a gray background */
+    color: #f2e6e6;            
+}
+
+#heading h1 {
+    font-size: 40px;         
+    font-weight: 700;        
+    margin: 0 0 10px 0;      
+}
+
+.border {
+    width: 100px;            
+    height: 3px;             
+    background-color: #fff;  
+    margin: 0 auto;          
+}
+
+/* 2. This is your "Black Box" containing the CAD and Spotlight */
+canvas {
+    display: block;
+    margin: 0 auto;          
+    background-color: #000000; /* Forces the internal canvas to stay black */
+    border: 2px solid #222;    /* A dark border to define the 800px box */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds a shadow so it sits "on" the gray */
+}
