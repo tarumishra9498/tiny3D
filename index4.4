@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Heart Model</title>
+
+    <link rel="stylesheet" href="./index.css">
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="heading">
+      <h1>Heart Model Iteration Tiny 3D</h1>
+      <div class="border"></div>
+    </div>
+
+    <div id="page-layout">
+      <div id="content-area">
+        <!-- HEART TAB -->
+        <div id="tab-heart" class="tab-content active">
+          <div id="canvas-container"></div>
+        </div>
+
+        <!-- MODEL 1 TAB -->
+        <div id="tab-model1" class="tab-content">
+          <div class="model1-tab-layout">
+            <div class="model1-controls-panel">
+              <h2>Model 1</h2>
+
+              <div class="control-container">
+                <label for="sliceSlider">CROSS-SECTION SLICE</label>
+                <input
+                  type="range"
+                  id="sliceSlider"
+                  min="-100"
+                  max="100"
+                  step="0.1"
+                  value="50"
+                >
+              </div>
+            </div>
+
+            <div id="model1-canvas-container"></div>
+          </div>
+        </div>
+
+        <!-- MODEL 2 TAB -->
+        <div id="tab-model2" class="tab-content">
+          <div class="text-panel">
+            <h2>Model 2</h2>
+            <p>This is placeholder text for Model 2.</p>
+          </div>
+        </div>
+
+        <!-- MODEL 3 TAB -->
+        <div id="tab-model3" class="tab-content">
+          <div class="text-panel">
+            <h2>Model 3</h2>
+            <p>This is placeholder text for Model 3.</p>
+          </div>
+        </div>
+      </div>
+
+      <div id="sidebar">
+        <button class="tab-button active" data-tab="tab-heart">Heart Model</button>
+        <button class="tab-button" data-tab="tab-model1">Model 1</button>
+        <button class="tab-button" data-tab="tab-model2">Model 2</button>
+        <button class="tab-button" data-tab="tab-model3">Model 3</button>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
