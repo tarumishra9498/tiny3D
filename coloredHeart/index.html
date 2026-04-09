@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart Model</title>
+  <link rel="stylesheet" href="./index.css" />
+  <script async src="https://unpkg.com/es-module-shims@1.10.0/dist/es-module-shims.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.161.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.161.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="page">
+    <div class="content-row">
+      <div id="canvas-container"></div>
+      <div id="info-panel">
+        <p><small id="status-text">Loading...</small></p>
+        <div id="color-swatch" style="width: 50px; height: 50px; border: 1px solid white;"></div>
+        <p><strong>Name:</strong> <span id="color-name">--</span></p>
+        <p><strong>Hex:</strong> <span id="color-hex">--</span></p>
+        <p><strong>Part:</strong> <span id="mesh-name">--</span></p>
+      </div>
+    </div>
+  </div>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
