@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Heart Model</title>
+
+    <link rel="stylesheet" href="./index.css" />
+
+    <script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@v0.153.0/build/three.module.js",
+          "three/addons/": "https://unpkg.com/three@v0.153.0/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="heading">
+      <h1>Tiny <3D</h1>
+      <div class="border"></div>
+    </div>
+
+    <div id="main-layout">
+      <div id="viewer-area">
+
+       
+
+        <div id="tab7" class="tab-panel active">
+            <div class="welcome-container">
+              
+              <div class="welcome-top">
+                <h1>Explore the Fetal Heart</h1>
+                <p style="font-style: italic;">An interactive 3D visualization of fetal cardiac anatomy and prominent defects</p>
+              </div>
+          
+              <div id="viewer7" class="viewer-box"></div>
+        
+          
+            </div>
+        </div>
+
+        <div id="tab8" class="tab-panel">
+            <div class="aboutus-container">
+          
+              <div class="about-section">
+                <h2>Motivation</h2>
+                <p>
+                  Congenital heart defects (CHDs) are the most common congenital anomalies and represent a leading cause of infant morbidity and mortality. 
+                  Early detection through fetal echocardiography significantly improves clinical outcomes, however, understanding fetal cardiac anatomy and 
+                  spatial relationships remains challenging for trainees due to the complexity of intracardiac structures and the limitations of traditional 
+                  2D ultrasound instruction. 
+                </p>
+                <p>
+                  Current educational tools such as static textbook images, simplified diagrams, and limited-access physical models 
+                  often fail to adequately convey three-dimensional spatial orientation or dynamic structural relationships. The objective of this project is 
+                  to develop an interactive, three-dimensional fetal heart model designed specifically for educational and clinical training purposes. The model 
+                  aims to accurately represent normal fetal cardiac anatomy and common congenital heart defects while allowing users to visualize standard sonographic 
+                  planes. 
+                </p>
+                <p>
+                  By integrating clinically relevant anatomical detail with intuitive user interaction, the design seeks to bridge the gap between 2D imaging and 
+                  3D anatomical comprehension. The model is being developed using professional 3D modeling software and optimized for web-based deployment to ensure accessibility, 
+                  scalability, and ease of use. Emphasis is placed on anatomical accuracy and clear differentiation of intracardiac features relevant to prenatal diagnosis. Prototype 
+                  development is currently underway, with iterative refinement focused on anatomical modification, accurate representation of common sonographic planes, and usability 
+                  optimization. Feasibility and educational effectiveness will be evaluated through structured stakeholder surveys to assess anatomical clarity, usability, and perceived 
+                  instructional value. 
+                </p>
+                <p>
+                  Future work includes validation of anatomical accuracy against clinical references and incorporation of additional defect variations based on stakeholder 
+                  feedback. Ultimately, this design seeks to enhance physician-patient communication and provide a cost-effective alternative to traditional physical teaching models. 
+                </p>
+                </p>
+              </div>
+          
+              <div class="about-section">
+                <h2>Our Sponsor and Acknowledgements</h2>
+                <p>
+                    We would like to sincerely thank Dr. Celeste Sheppard for her mentorship, clinical insight, and continued support throughout this project. 
+                    Her expertise in fetal cardiology has been instrumental in helping us understand the clinical problem and guiding the development of our prototype.
+                </p>
+                <p>
+                    We also extended our gratitude to Dr. Kristen Adams and Dr. Tyrone Porter for their guidance and instruction through the design process. 
+                    Their mentorship has strengthened our engineering approach and provided valuable direction as we progressed through each phase of the project.
+                </p>
+                <p>
+                    Lastly, we thank the Department of Biomedical Engineering at the University of Texas at Austin 
+                    for providing the funding, resources, and academic environment necessary to support this work. Without their sponsorship and support, this project would not have been possible. 
+                </p>
+                </p>
+              </div>
+          
+              <div class="about-section">
+                <h2>Our Team</h2>
+                <p>
+                  We are a team of four motivated Biomedical Engineering seniors at the University of Texas at Austin with specializations in computation, design, and biologics: Kylie Huynh, Deeya Kaneria, Italia Rodriguez, and Taru Mishra.
+
+                </p>
+              </div>
+          
+            </div>
+          </div>
+
+        <div id="tab1" class="tab-panel">
+          <div id="viewer1" class="viewer-box"></div>
+        </div>
+
+        <div id="tab2" class="tab-panel">
+          <div id="viewer2" class="viewer-box"></div>
+        </div>
+
+        <div id="tab3" class="tab-panel">
+            <div class="tab-content-stack">
+                <div class="info-box">
+                  <h3>Atrial Septal Defect</h3>
+                  <p>
+                    An Atrial Septal Defect (ASD) is a heart condition that results in a hole between the upper heart chambers from birth. 
+                    This can increase the strain on the lungs when pumping blood, and harm the direction of bloodflow.  
+                    Small defects are generally not a cause for concern, however, larger defects may require further surgical intervention.
+                  </p>
+
+                </div>
+                <div id="asd-viewer-stack">
+                    <div id="viewer3" class="asd-viewer-box"></div>
+                    
+                  </div>
+              </div>
+        </div>
+
+        <div id="tab4" class="tab-panel">
+            <div class="tab-content-stack">
+                <div class="info-box">
+                  <h3>Ventricular Septal Defect</h3>
+                  <p>
+                    A Ventricular Septal Defect (VSD) results in the development of a hole in the lower ventricular walls during the womb.
+                    This can increase the strain on the lungs when pumping blood, and harm the direction of blood flow because the
+                    blood has to flow through the VSD into the lungs.  
+                    Small defects are generally not a cause for concern, however, larger defects may require surgical intervention.
+                    
+                  </p>
+                </div>
+                <div id="asd-viewer-stack">
+                    <div id="viewer4" class="asd-viewer-box"></div>
+                    <div id="viewer10" class="asd-viewer-box"></div>
+                  </div>
+              </div>
+        </div>
+
+        <div id="tab9" class="tab-panel">
+            <div class="tab-content-stack">
+                <div class="info-box">
+                  <h3>Tetralogy of Fallot</h3>
+                  <p>
+                    Tetralogy of Fallot is a condition with four different heart problems: Stenosis, Overriding Aorta, Right Ventricular Hypertrophy, and VSD.
+                    This malformation can prevent access to oxygen for the infant and generally requires surgical intervention. 
+                    It is a rare condition seen to be correlated with Down Syndrome as well.
+                  </p>
+                </div>
+                <div id="asd-viewer-stack">
+                    <div id="viewer9" class="asd-viewer-box"></div>
+                    <div id="viewer12" class="asd-viewer-box"></div>
+                  </div>
+              </div>
+        </div>
+        <div id="tab98" class="tab-panel">
+            <div class="tab-content-stack">
+                <div class="info-box">
+                  <h3>Patent Ductus Arteriosus</h3>
+                  <p>
+                    Patent Ductus Arteriosus (PDA) occurs when the opening between the aorta and the pulmonary artery, the Ductus Arteriosus fails to close after birth. 
+                    This can result in an excess of blood flowing into the lungs and heart, potentially resulting in higher blood pressure, a larger heart, and congestion.
+                    Depending on its severity, medicinal or surgical treatment can be employed. 
+               </p>
+                </div>
+                <div id="asd-viewer-stack">
+                    <div id="viewer98" class="asd-viewer-box"></div>
+                  </div>
+              </div>
+        </div>
+
+        <div id="tab5" class="tab-panel">
+
+            <div class="control-container">
+              <label for="sliceSlider">Cross-Section Slice: </label>
+              <input type="range" id="sliceSlider" min="0" max="9" step="0.1" value="4.5">
+            </div>
+          
+            <div class="slicer-layout">
+          
+              <div class="slicer-side-panel">
+                <div class="slicer-image-container">
+                  <img src="image.jpeg" alt="Combined reference">
+                </div>
+              </div>
+          
+              <div id="viewer5" class="viewer-box"></div>
+          
+            </div>
+          
+            <!-- NEW BOTTOM VIEW -->
+            <div class="bottom-overview-section">
+                <h2>Sonographic Planes</h2>
+              
+                <div class="plane-legend">
+                  <h3>Plane Key</h3>
+              
+                  <div class="legend-item">
+                    <span class="legend-color legend-red"></span>
+                    Four Chamber
+                  </div>
+              
+                  <div class="legend-item">
+                    <span class="legend-color legend-yellow"></span>
+                    LVOT
+                  </div>
+              
+                  <div class="legend-item">
+                    <span class="legend-color legend-green"></span>
+                    RVOT
+                  </div>
+              
+                  <div class="legend-item">
+                    <span class="legend-color legend-blue"></span>
+                    Three-Vessel-Trachea View
+                  </div>
+                </div>
+              
+                <div id="viewerBottom" class="bottom-viewer"></div>
+              </div>
+ 
+          
+          </div>
+
+        <div id="tab6" class="tab-panel">
+          <div class="container-anatomy">
+            <div class="image-section">
+              <h1>Select Different Features</h1>
+              <canvas id="imageCanvas"></canvas>
+            </div>
+            <div id="viewer16" class="viewer-box"></div>
+            <div class="info-section">
+              <div id="colorPreview"></div>
+              <p style="display:none;"><span id="hexValue"></span></p>
+              <p style="display:none;"><span id="rgbValue"></span></p>
+              <p style="display:none;"><span id="concreteColor"></span></p>
+              <h2 id="featureLabel">Name</h2>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      
+
+      <div id="tabs">
+        <button class="tab-button active" data-tab="tab7">Welcome</button>
+        <button class="tab-button" data-tab="tab8">About Us</button>
+        <button class="tab-button" data-tab="tab1">Fetal Heart</button>
+        <button class="tab-button" data-tab="tab2">Internal Anatomy</button>
+        <button class="tab-button" data-tab="tab3">Atrial Septal Defect</button>
+        <button class="tab-button" data-tab="tab4">Ventricular Septal Defect</button>
+        <button class="tab-button" data-tab="tab9">Tetralogy of Fallot</button>
+        <button class="tab-button" data-tab="tab98">Ductus Arteriosus</button>
+        <button class="tab-button" data-tab="tab5">Slicer</button>
+        <button class="tab-button" data-tab="tab6">Anatomy</button>
+      </div>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
